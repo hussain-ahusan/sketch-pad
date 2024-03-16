@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px;
+    background-color: rgb(255, 242, 226);
+}
+
+h2 {
+    font-family: Foldit-VariableFont_wght;
+    font-size: 6rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    border: 2px solid black;
+    width: 650px;
+    height: 650px;
+    margin: 4em;
+    background-color: white;
+}
+
+#container>div {
+    height: auto;
+    flex: 1 0 auto;
+  
+    /* make columns vertical flexboxes */
+    display: flex;
+    flex-direction: column;
+}
+  
+#container>div>* {
+    /* make rows evenly distributed */
+    flex: 1;
+}
+
+
+
+
+
