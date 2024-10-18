@@ -28,8 +28,18 @@ function clearField() {
   const clear = document.querySelector('#size').value='';
 };
 
+//size button setup
+const sizeButton = document.querySelector('.size');
+sizeButton.addEventListener('click', (e) => {
+  removeOldSquares();
+  //grabs input value from input field
+  const userSize = document.querySelector('#size').value;
+  makeGrids(userSize);
+  clearField();
+});
+
+//color the grid
 const setColor = document.querySelector('.set-color');
-console.log(setColor)
 setColor.addEventListener('click', () => {
   let currentColor = document.querySelector('#color-picker').value
   const squares = document.querySelectorAll('.square')
@@ -44,14 +54,21 @@ setColor.addEventListener('click', () => {
   }
 });
 
-const sizeButton = document.querySelector('.size');
-sizeButton.addEventListener('click', (e) => {
-  removeOldSquares();
-  //grabs input value from input field
-  const userSize = document.querySelector('#size').value;
-  makeGrids(userSize);
-  clearField();
-});
+//Eraser setup
+const eraser =  document.querySelector('.eraser');
+eraser.addEventListener('click', () => {
+  const squares = document.querySelectorAll('.square')
+  let length = squares.length
+  for (let i = 0; i < length; i++) {
+    squares[i].setAttribute('counter', 0);
+    squares[i].addEventListener('mouseover', function(e) {
+      if(e.buttons == 1) {
+        this.style.backgroundColor = 'white';
+      }
+    })
+  }
+})
+
 
 
 
